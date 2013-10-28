@@ -17,7 +17,7 @@
         <script src="js/jquery.jplayer.min.js"></script>
 
         <script>
-                       $(document).ready(function() {
+            $(document).ready(function() {
                 $("#jquery_jplayer_1").jPlayer({
                     ready: function() {
                         $(this).jPlayer("setMedia", {
@@ -104,34 +104,35 @@
         </script>
         <style>
             body{
-                font-family: signikaregular;
+                font-family: signikaregular !important;
             }
             .jp-play {
                 font-size: 18pt;
                 text-decoration: none;
                 display: block;
                 background: #e64c65;
-                color: #fff;
+                color: #fff !important;
                 height: 50px;
-                width: 500px;
+                width: inherit;
                 padding: 20px 20px 5px;
+                font-family: signikaregular !important;
             }
             .jp-pause {
                 font-size: 18pt;
                 text-decoration: none;
                 display: block;
                 background: #1fbba6;
-                color: #fff;
+                color: #fff !important;
                 height: 50px;
-                width: 500px;
+                width: inherit;
                 padding: 20px 20px 5px;
+                font-family: signikaregular !important;
             }
             .jp-audio{
                 margin-bottom: 30px;
-                width: 500px;
+                width: inherit;
             }
             .jp-current-time, .jp-duration{
-                width : 50px;
                 color:#fff;
                 font-size: 18pt;
             }
