@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CalmPaws</title>
+
+        <link rel="stylesheet" href='css/font.css' />
+
+        <script src="js/jquery.min.js"></script>
+
+        <script>
+            var start = 0;
+            function getPic() {
+                $.ajax({
+                    type: "POST",
+                    url: "http://flyingcursor.com/CalmPaws/gallery.php",
+                    data: {"start": start},
+                    success: function(data) {
+                        cont = data.split("=========");
+                        start = cont[0];
+                        $(".gallery").fadeOut();
+                        $(".gallery").html(cont[1]);
+                        $(".gallery").fadeIn();
+                    }
+                });
+            }
+
+            getPic();
+
+            setInterval(function() {
+                if ($("video").length > 0) {
+                    if ($("video").get(0).paused) {
+                        getPic();
+                    }
+                } else {
+                    getPic();
+                }
+            }, 7000);
+            $(document).ready(function() {
+
+            });
+        </script>
+
+        <style>
+            body{
+                font-family: signikaregular;
+            }
+            .highlight{
+                color: #e64c65;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="page">
+            <p class="highlight">#CalmPaws on Instagram!</p>
+            <p>
+                When you instagram any of our kind, remember to #CalmPaws will ya? <br />
+                Just like you, we too love our own pictures, but we need you to click them for us!
+            </p>
+            <section class="gallery">
+
+            </section>
+        </div>
+    </body>
+</html>  
