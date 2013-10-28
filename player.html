@@ -17,6 +17,9 @@
         <script src="js/jquery.jplayer.min.js"></script>
 
         <script>
+            $(document).bind("mobileinit", function() {
+                $.mobile.ajaxEnabled = false;
+            });
             $(document).ready(function() {
                 $("#jquery_jplayer_1").jPlayer({
                     ready: function() {
@@ -166,7 +169,7 @@
                 <img class="logo" src="images/header.png" />
             </div>
             <div data-role="content">
-                
+
                 <div  id="jquery_jplayer_1" class="jp-jplayer"></div>
                 <div id="jp_container_1" class="jp-audio">
                     <a href="#" class="jp-play" tabindex="1">Puppy Kisses</a>
