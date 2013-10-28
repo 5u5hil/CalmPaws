@@ -29,9 +29,13 @@
 
     <gap:plugin name="nl.x-services.plugins.socialsharing" />
     
-    <gap:splash src="splash.png" />
+    <gap:splash src="images/ldpi.png" gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="images/mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="images/hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="images/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
     
-    <icon src="icon.png" />
+    <icon src="images/icon.png" />
     
+       
 
 </widget>
