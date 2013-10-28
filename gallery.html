@@ -42,10 +42,7 @@
                     getPic();
                 }
             }, 7000);
-            $(document).bind("mobileinit", function() {
-                $.mobile.ajaxEnabled = false;
-            });
-        </script>
+                   </script>
 
         <style>
             body{
@@ -85,9 +82,9 @@
                 <div data-role="footer" data-id="foo1" data-position="fixed">
                     <div data-role="navbar">
                         <ul>
-                            <li><a href="./index.html" ><img src="images/home.png" width="51" height="51"></a></li>
-                            <li><a href="./player.html"><img src="images/insta.png" width="51" height="51"></a></li>
-                            <li><a href="./gallery.html" class="ui-btn-active"><img src="images/tracks.png" width="51" height="51"></a></li>
+                            <li><a href="index.html" rel="external" and data-ajax="false"><img src="images/home.png" width="51" height="51"></a></li>
+                            <li><a href="player.html" rel="external" and data-ajax="false"><img src="images/insta.png" width="51" height="51"></a></li>
+                            <li><a href="gallery.html" class="ui-btn-active" rel="external" and data-ajax="false"><img src="images/tracks.png" width="51" height="51"></a></li>
                         </ul>
                     </div><!-- /navbar -->
                 </div><!-- /footer -->
