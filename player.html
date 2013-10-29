@@ -1,20 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
     <head>
         <title>CalmPaws</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+        <link rel="stylesheet" href="css/jquery.mobile.min.css" />
         <link rel="stylesheet" href='css/font.css' />
-        <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
-        <link rel="stylesheet" href="css/calmpaws.css" />
+        <link rel="stylesheet" href='css/style.css' />
 
         <script src="js/jquery.min.js"></script>
-        <script src="js/jquery.mobile-1.3.2.min.js"></script>
+        <script src="js/jquery.mobile.min.js"></script>
         <script src="js/jquery.jplayer.min.js"></script>
+        
+        <script src="phonegap.js"></script> 
 
         <script>
             $(document).ready(function() {
@@ -102,77 +100,16 @@
 
             });
         </script>
-        <style>
-            body{
-                font-family: signikaregular !important;
-            }
-            .jp-play {
-                font-size: 18pt;
-                text-decoration: none;
-                display: block;
-                background: #e64c65;
-                color: #fff !important;
-                height: 50px;
-                width: inherit;
-                padding: 20px 20px 5px;
-                font-family: signikaregular !important;
-            }
-            .jp-pause {
-                font-size: 18pt;
-                text-decoration: none;
-                display: block;
-                background: #1fbba6;
-                color: #fff !important;
-                height: 50px;
-                width: inherit;
-                padding: 20px 20px 5px;
-                font-family: signikaregular !important;
-            }
-            .jp-audio{
-                margin: 30px;
-                width: inherit;
-            }
-            .jp-current-time, .jp-duration{
-                color:#fff;
-                font-size: 18pt;
-            }
-            .timeie {
-                width: -50px;
-                float: right;
-                margin-top: -55px;
-                margin-right: 15px;
-            }
-            .jp-current-time{
-                display: none;
-            }
-            article{
-                text-align: center;
-                color: #34495e;
-                font-size: 18px;
-            }
-            .bold{
-                font-family: signikabold;
-            }
-            .logo{
-                margin: 10px;
-            }
-            .ui-content{
-                padding: 0;
-            }
-            .page{
-                margin: 10px;
-                font-size: 17px;
-            }
-        </style>
 
     </head>
-    <body>
-        <div data-role="page" id="page">
-            <div data-theme="a" data-role="header">
-                <img class="logo" src="images/header.png" />
-            </div>
-            <div class="page" data-role="content">
 
+    <body>
+        <div data-role="page">
+            <div data-role="header" data-position="fixed">
+                <img src="images/tracks-header.png" />
+            </div><!-- /header -->
+
+            <div data-role="content">
                 <div  id="jquery_jplayer_1" class="jp-jplayer"></div>
                 <div id="jp_container_1" class="jp-audio">
                     <a href="#" class="jp-play" tabindex="1">Puppy Kisses</a>
@@ -209,16 +146,17 @@
                     <p> All tracks by Bradley Joseph.<br />Download these tracks and more such amazing music from</p>
                     <p class="bold">[www.bradleyjoseph.com]</p>
                 </article>
-            </div>
-            <div data-role="footer" data-id="foo1" data-position="fixed">
+            </div><!-- /content -->
+
+            <div data-role="footer" data-id="foo" data-position="fixed">
                 <div data-role="navbar">
                     <ul>
-                        <li><a href="index.html" rel="external" and data-ajax="false" ><img src="images/home.png" ></a></li>
-                        <li><a href="player.html" class="ui-btn-active" rel="external" and data-ajax="false"><img src="images/insta.png" ></a></li>
-                        <li><a href="gallery.html" rel="external" and data-ajax="false"><img src="images/tracks.png" ></a></li>
+                        <li><a href="index.html" data-ajax="false"><img src="images/home.png" /></a></li>
+                        <li class="ui-btn-active" data-ajax="false"><a href="player.html"><img src="images/insta.png" /></a></li>
+                        <li><a href="gallery.html" data-ajax="false"><img src="images/tracks.png" /></a></li>
                     </ul>
                 </div><!-- /navbar -->
             </div><!-- /footer -->
-        </div>
+        </div><!-- /page -->
     </body>
-</html>  
+</html>

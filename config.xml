@@ -8,15 +8,6 @@
 
     <author href="http://www.sushil-s.com/" email="sushil.sud@gmail.com">Sushil Sudhakaran</author>
 
-    <!--<gap:plugin name="org.apache.cordova.core.inappbrowser" />
-    <gap:plugin name="org.apache.cordova.core.camera" />
-    <gap:plugin name="org.apache.cordova.core.file" />
-    <gap:plugin name="org.apache.cordova.core.file-transfer" />
-    <gap:plugin name="org.apache.cordova.core.device-orientation" />
-    <gap:plugin name="org.apache.cordova.core.dialogs" />
-    <gap:plugin name="org.apache.cordova.core.media" version="0.2.4" />
-    <gap:plugin name="org.apache.cordova.core.media-capture" version="0.2.3" />-->
-
     <preference name="phonegap-version" value="2.9.0" />
     <preference name="fullscreen" value="true" />
 
@@ -33,6 +24,12 @@
     <gap:splash src="images/mdpi.png" gap:platform="android" gap:density="mdpi" />
     <gap:splash src="images/hdpi.png" gap:platform="android" gap:density="hdpi" />
     <gap:splash src="images/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+    
+    <gap:splash src="images/SS-320x480.png" gap:platform="ios" width="320" height="480" />
+    <gap:splash src="images/SS-640x960.png" gap:platform="ios" width="640" height="960" />
+    <gap:splash src="images/SS-640x1136.png" gap:platform="ios" width="640" height="1136" />
+    <gap:splash src="images/SS-768x1004.png" gap:platform="ios" width="768" height="1004" />
+    <gap:splash src="images/SS-1536x2008.png" gap:platform="ios" width="1536" height="2008" />
     
     <icon src="images/icon.png" />
     

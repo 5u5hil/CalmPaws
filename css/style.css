@@ -1,0 +1,99 @@
+body{
+    background-image: url("../images/bg.png");
+}
+.ui-grid-b,.ui-header {
+    background-image: url("../images/lblue-bg.png");
+}
+.ui-header{
+    padding: 10px;
+}
+.ui-header img{
+    height: 30px;
+    width: auto;
+    vertical-align: bottom;
+}
+.ui-grid-b li a img{
+    width: 30px;
+    height: 30px;
+}
+.ui-block-a,.ui-block-b{
+    border-right: 2px solid #fff;
+}
+.ui-btn-active{
+    background-image: url("../images/blue-bg.png");
+}
+.ui-content{
+    padding: 0;
+    font-family: "signikaregular";
+    font-size: 15px;
+    color: #34495e;
+}
+.banner{
+    width: 100%;
+}
+.text{
+    padding: 25px 40px;
+}
+.highlight{
+    color: #e64c65;
+}
+.jp-play {
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    background-image: url("../images/pink-bg.png");
+    color: #fff !important;
+    height: 40px;
+    width: inherit;
+    padding: 20px 20px 0px 40px;
+    font-family: signikaregular !important;
+}
+.jp-pause {
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    background-image: url("../images/green-bg.png");
+    color: #fff !important;
+    height: 40px;
+    width: inherit;
+    padding: 20px 20px 0px 40px;
+    font-family: signikaregular !important;
+}
+.jp-audio{
+    margin: 30px;
+    width: inherit;
+}
+.jp-current-time, .jp-duration{
+    color:#fff;
+    font-size: 14px;
+}
+.timeie {
+    float: right;
+    margin-top: -40px;
+    margin-right: 40px;
+}
+.jp-current-time{
+    display: none;
+}
+article{
+    text-align: center;
+    color: #34495e;
+    font-size: 18px;
+}
+.bold{
+    font-family: signikabold;
+}
+.gallery{
+    text-align: centre;
+    margin: 10px;
+}
+.gallery div{
+    float: left;
+
+    width: 150px;
+}
+.gallery div img{
+    width: 150px;
+    margin: 10px;
+}
+
