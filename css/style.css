@@ -83,16 +83,15 @@ article{
 .bold{
     font-family: signikabold;
 }
-.gallery{
-    text-align: centre;
-    margin: 10px;
-}
-.gallery div{
-    float: left;
 
-    width: 150px;
+#inner {
+    width: 90%;
+    margin: auto;
 }
-.gallery div img{
+.img {
+    float: left;
+}
+.gallery div img {
     width: 150px;
     margin: 10px;
 }
