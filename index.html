@@ -10,14 +10,133 @@
 
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.mobile.min.js"></script>
+        <script src="js/jquery.jplayer.min.js"></script>
 
         <script src="phonegap.js"></script> 
         <script src="js/plugins/SocialSharing.js"></script>
 
+
+        <script>
+            $(document).ready(function() {
+                $("#jquery_jplayer_1").jPlayer({
+                    ready: function() {
+                        $(this).jPlayer("setMedia", {
+                            mp3: "http://flyingcursor.com/CalmPaws/Track1.mp3"
+                        });
+                    },
+                    play: function() { // To avoid multiple jPlayers playing together.
+                        $(".jp-jplayer").not(this).jPlayer("stop");
+
+                        $("#jp_container_1 .timeie  .jp-duration").hide();
+                        $("#jp_container_1 .timeie  .jp-current-time").show();
+
+                        $("#jp_container_2 .timeie  .jp-current-time").hide();
+                        $("#jp_container_2 .timeie  .jp-duration").show();
+
+                        $("#jp_container_3 .timeie  .jp-current-time").hide();
+                        $("#jp_container_3 .timeie  .jp-duration").show();
+
+                    },
+                    stop: function() {
+                        $("#jp_container_1 .timeie  .jp-duration").show();
+                        $("#jp_container_1 .timeie  .jp-current-time").hide();
+                    },
+                    swfPath: "js",
+                    supplied: "mp3"
+
+                });
+
+                $("#jquery_jplayer_2").jPlayer({
+                    ready: function() {
+                        $(this).jPlayer("setMedia", {
+                            mp3: "http://flyingcursor.com/CalmPaws/Track2.mp3"
+                        });
+                    },
+                    play: function() { // To avoid multiple jPlayers playing together.
+                        $(".jp-jplayer").not(this).jPlayer("stop");
+
+                        $("#jp_container_2 .timeie  .jp-duration").hide();
+                        $("#jp_container_2 .timeie  .jp-current-time").show();
+
+                        $("#jp_container_1 .timeie  .jp-current-time").hide();
+                        $("#jp_container_1 .timeie  .jp-duration").show();
+
+                        $("#jp_container_3 .timeie  .jp-current-time").hide();
+                        $("#jp_container_3 .timeie  .jp-duration").show();
+                    },
+                    stop: function() {
+                        $("#jp_container_2 .timeie  .jp-duration").show();
+                        $("#jp_container_2 .timeie  .jp-current-time").hide();
+                    },
+                    swfPath: "js",
+                    supplied: "mp3",
+                    cssSelectorAncestor: "#jp_container_2"
+                });
+
+                $("#jquery_jplayer_3").jPlayer({
+                    ready: function() {
+                        $(this).jPlayer("setMedia", {
+                            mp3: "http://flyingcursor.com/CalmPaws/Track3.mp3"
+                        });
+                    },
+                    play: function() { // To avoid multiple jPlayers playing together.
+                        $(".jp-jplayer").not(this).jPlayer("stop");
+
+                        $("#jp_container_3 .timeie  .jp-duration").hide();
+                        $("#jp_container_3 .timeie  .jp-current-time").show();
+
+                        $("#jp_container_2 .timeie  .jp-current-time").hide();
+                        $("#jp_container_2 .timeie  .jp-duration").show();
+
+                        $("#jp_container_1 .timeie  .jp-current-time").hide();
+                        $("#jp_container_1 .timeie  .jp-duration").show();
+                    },
+                    stop: function() {
+                        $("#jp_container_3 .timeie  .jp-duration").show();
+                        $("#jp_container_3 .timeie  .jp-current-time").hide();
+                    },
+                    swfPath: "js",
+                    supplied: "mp3",
+                    cssSelectorAncestor: "#jp_container_3"
+                });
+
+            });
+        </script>
+
+        <script>
+            var start = 0;
+            function getPic() {
+                $.ajax({
+                    type: "POST",
+                    url: "http://flyingcursor.com/CalmPaws/gallery.php",
+                    data: {"start": start},
+                    success: function(data) {
+                        cont = data.split("=========");
+                        start = cont[0];
+                        $(".gallery").fadeOut();
+                        $("#inner").html(cont[1]);
+                        $(".gallery").fadeIn();
+                    }
+                });
+            }
+
+            getPic();
+
+            setInterval(function() {
+                if ($("video").length > 0) {
+                    if ($("video").get(0).paused) {
+                        getPic();
+                    }
+                } else {
+                    getPic();
+                }
+            }, 7000);
+        </script>
+
     </head>
 
     <body>
-        <div data-role="page">
+        <div data-role="page" id="home">
             <div data-role="header" data-position="fixed" data-tap-toggle="false">
                 <img src="images/header.png" />
             </div><!-- /header -->
@@ -54,9 +173,99 @@
             <div data-role="footer" data-id="foo" data-position="fixed" data-tap-toggle="false">
                 <div data-role="navbar">
                     <ul>
-                        <li class="ui-btn-active" data-ajax="false"><a href="index.html"><img src="images/home.png" /></a></li>
-                        <li><a href="player.html" data-ajax="false"><img src="images/insta.png" /></a></li>
-                        <li><a href="gallery.html" data-ajax="false"><img src="images/tracks.png" /></a></li>
+                        <li class="ui-btn-active" ><a data-transition="flip"  href="#home"><img src="images/home.png" /></a></li>
+                        <li><a data-transition="flip"  href="#player" ><img src="images/insta.png" /></a></li>
+                        <li><a data-transition="flip"  href="#gallery" ><img src="images/tracks.png" /></a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+        <div data-role="page" id="player">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false">
+                <img src="images/tracks-header.png" />
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <div  id="jquery_jplayer_1" class="jp-jplayer"></div>
+                <div id="jp_container_1" class="jp-audio" style="margin-top: 50px;">
+                    <a href="#" class="jp-play" tabindex="1">Puppy Kisses</a>
+                    <a href="#" class="jp-pause" tabindex="1">Puppy Kisses</a>
+                    <div class="timeie">
+                        <div class="jp-current-time"></div>
+                        <div class="jp-duration"></div>   
+                    </div>
+                </div>
+
+
+                <div id="jquery_jplayer_2" class="jp-jplayer"></div>
+                <div id="jp_container_2" class="jp-audio">
+                    <a href="#" class="jp-play" tabindex="1">Happy To See You</a>
+                    <a href="#" class="jp-pause" tabindex="1">Happy To See You</a>
+                    <div class="timeie">
+                        <div class="jp-current-time"></div>
+                        <div class="jp-duration"></div>   
+                    </div>   
+                </div>
+
+
+                <div id="jquery_jplayer_3" class="jp-jplayer"></div>
+                <div id="jp_container_3" class="jp-audio">
+                    <a href="#" class="jp-play" tabindex="1">My Best Friend</a>
+                    <a href="#" class="jp-pause" tabindex="1">My Best Friend</a>
+                    <div class="timeie">
+                        <div class="jp-current-time"></div>
+                        <div class="jp-duration"></div>   
+                    </div>   
+                </div>
+
+                <article>
+                    <p> All tracks by Bradley Joseph.<br />Download these tracks and more such amazing music from</p>
+                    <p class="bold">[www.bradleyjoseph.com]</p>
+                </article>
+            </div><!-- /content -->
+
+            <div data-role="footer" data-id="foo" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a data-transition="flip" href="#home" ><img src="images/home.png" /></a></li>
+                        <li class="ui-btn-active" ><a data-transition="flip" href="#player"><img src="images/insta.png" /></a></li>
+                        <li><a data-transition="flip" href="#gallery" ><img src="images/tracks.png" /></a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+
+        <div data-role="page" id="gallery">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false">
+                <img src="images/gallery-header.png" />
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <div class="text">
+                    <p class="highlight">#CalmPaws on Instagram!</p>
+                    <p>
+                        When you instagram any of our kind, remember to #CalmPaws will ya? <br />
+                        Just like you, we too love our own pictures, but we need you to click them for us!
+                    </p>
+                </div>
+                <section class="gallery">
+                    <div id="inner">
+
+                    </div>
+
+                </section>   
+            </div><!-- /content -->
+
+            <div data-role="footer" data-id="foo" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a data-transition="flip"  href="#home" ><img src="images/home.png" /></a></li>
+                        <li><a data-transition="flip" href="#player" ><img src="images/insta.png" /></a></li>
+                        <li class="ui-btn-active" ><a data-transition="flip" href="#gallery"><img src="images/tracks.png" /></a></li>
                     </ul>
                 </div><!-- /navbar -->
             </div><!-- /footer -->
