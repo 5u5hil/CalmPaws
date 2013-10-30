@@ -91,11 +91,11 @@ article{
 
 .gallery div img {
     width: 100%;
-    margin: 10px;
+    margin-bottom: 20px;
 }
 
 .gallery div video {
     width: 100%;
-    margin: 10px;
+    margin-bottom: 20px;
 }
 
